@@ -9,9 +9,12 @@ public class App {
         Expression three = new NumberExpression(3);
         Expression four = new NumberExpression(4);
 
-        Expression add = new BinaryExpression(one,Operator.PLUS,  two);
-        Expression subtract = new BinaryExpression(three,Operator.MINUS,  four);
-        Expression multiply = new BinaryExpression(add,Operator.TIMES,  subtract);
+        Expression add = new BinaryExpression(one, Operator.PLUS, two);
+        Expression subtract = new BinaryExpression(three, Operator.MINUS, four);
+        Expression multiply = new BinaryExpression(add, Operator.TIMES, subtract);
+        System.out.println(add);
+        System.out.println(subtract);
+        System.out.println(multiply);
 
         // Parcours en profondeur
         System.out.println("Depth First Iteration:");
@@ -34,6 +37,8 @@ public class App {
         ExpressionVisitor opVisitor = new OperatorExpressionVisitor();
         multiply.accept(opVisitor);
         System.out.println("The expression contains " + ((OperatorExpressionVisitor) opVisitor).getAdd()+ " additions " + ((OperatorExpressionVisitor) opVisitor).getSub() + " substractions " + ((OperatorExpressionVisitor) opVisitor).getMult() + " multiplications "  );
+        }
     }
-}
+
+
 
